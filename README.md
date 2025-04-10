@@ -48,3 +48,26 @@ Write a few tests, for each "sub stage" of your code.
 And then finally, for each grocery item, built a quick text output of High/Low and and Average value for the things on the list.
 GOOD LUCK ZIPCODERS!!!! May the Odds be ever in your favor!!!!
 
+# Implementation Notes
+
+Key Features of this Implementation
+Robust Regex Pattern Matching: Uses proper regex patterns to handle the various separators (:, @, ^, *, %, !)
+
+Exception Handling: Properly handles and counts exceptions without crashing
+
+Case-Insensitive Key Handling: Normalizes keys to lowercase for consistent processing
+
+Detailed Reporting: Generates reports showing:
+
+Total appearances of each item
+Price frequency for each item
+Total error count
+Clean Output Format: Formats the output to match the expected format from ExpectedOutput.txt
+
+Explanation of Regex Used
+^\\s*([^:@^*%!]+):@^*%!$ - This pattern matches key-value pairs where:
+^\\s* - Match the start of the string and any leading whitespace
+([^:@^*%!]+) - Capture group 1: Match one or more characters that aren't separators
+[:@^*%!] - Match any of the separators
+(.*)$ - Capture group 2: Match the rest of the string (the value)
+The implementation passes all the provided tests and handles the edge cases mentioned in the README, such as missing values and various separator characters.
